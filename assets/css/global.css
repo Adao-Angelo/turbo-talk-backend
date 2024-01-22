@@ -1,0 +1,138 @@
+@import url(../util/font/font.css);
+* {
+  margin: 0%;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins-regular";
+  color: rgb(58, 58, 58);
+}
+.container {
+  display: flex;
+}
+.side_menu {
+  background-color: #ffffff;
+  padding: 1rem;
+  width: 25vw;
+  height: 100vh;
+  z-index: 3;
+}
+.side_menu1 {
+  background-color: #ffffff;
+  padding: 1rem;
+  width: 25vw;
+  height: 100vh;
+}
+.chat_img {
+  width: 4rem;
+}
+.profile {
+  text-align: center;
+}
+.profile .avatar_img {
+  width: 8rem;
+  border-radius: 50%;
+  margin: 2rem;
+}
+
+.profile .chat_btn {
+  font-family: "poppins-bold";
+  color: #ffffff;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #368d36;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+.chat_btn:hover {
+  transition: 0.3s;
+  background-color: #0c640c;
+}
+.logout_btn {
+  color: red;
+  display: block;
+  text-decoration: none;
+  margin: 3rem;
+}
+.msg_container {
+  width: 75vw;
+  padding: 1rem;
+  background-color: rgb(217, 216, 216);
+}
+.msg_container .chat_name h2 {
+  color: royalblue;
+  font-family: "poppins-bold";
+}
+.chat {
+  overflow: hidden;
+  display: grid;
+  overflow-y: hidden;
+}
+.chat .div {
+  display: grid;
+  overflow-y: hidden;
+}
+.msg_container .avatar_img {
+  width: 2rem;
+  border-radius: 1rem;
+}
+.msg_container .msg.my .avatar_img {
+  display: none;
+}
+.msg_container .msg {
+  width: 50%;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+}
+.msg_container .msg.my .msg_user_name {
+  display: none;
+}
+.msg_container .msg .msg_user_name {
+  color: rgb(59, 59, 216);
+}
+.msg_container .msg.my {
+  width: 50%;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+  margin-left: 50%;
+}
+.msg_container .msg.my .msg_content {
+  background-color: #36c936;
+}
+
+.msg_container .msg .msg_content {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.inf_text {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: rgb(217, 216, 216);
+}
+
+.inf_text textarea {
+  width: 40%;
+}
+.send_btn {
+  color: #ffffff;
+  width: 20%;
+  padding: 1rem;
+  border: none;
+
+  border-radius: 1rem;
+  background-color: #368d36;
+}
+
+.send_btn:hover {
+  transition: 0.3;
+  background-color: #36c936;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <title>CH∆T</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <menu class="side_menu">
+          <img src="./assets/util/image/chat.jpg" alt="" class="chat_img" />
+          <div class="profile">
+            <div id="avatar_img"></div>
+            <h2 id="user_name" class="user_name">...</h2>
+            <button class="chat_btn">CH∆T</button>
+            <a href="#" id="logout_btn" class="logout_btn">Sair</a>
+          </div>
+        </menu>
+      </div>
+      <div class="msg_container">
+        <div class="chat_name">
+          <h2>Ch∆t ID</h2>
+        </div>
+        <div class="chat">
+          <div class="chatb" id="chatb"></div>
+        </div>
+        <div class="inf_text">
+          <textarea
+            name="msg_text"
+            id="msg_text"
+            rows="1"
+            placeholder="messagem"
+          ></textarea>
+          <button class="send_btn" id="send_btn">Enviar</button>
+        </div>
+      </div>
+      <main></main>
+    </div>
+    <script type="module" src="./config/js/global.js"></script>
+  </body>
+</html>
