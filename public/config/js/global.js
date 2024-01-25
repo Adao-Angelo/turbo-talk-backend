@@ -1,54 +1,18 @@
-// trazer todos os dados do usuario
 const userSessionName = document.getElementById("user_name");
 const avatar_img = document.getElementById("avatar_img");
-if (!sessionStorage.getItem("chatSession")) {
-  open("./signIn.html", "_self");
-} else {
-  const name = sessionStorage.getItem("chatSession");
-  userSessionName.textContent = name;
-  avatar_img.innerHTML = `
-  <img
-  src="./assets/util/image/avatar/avatar${1}.jpg"
-  alt=""
-  class="avatar_img"
-/>
-  `;
-}
-//  quando clicar no sair
+
 const logout = document
   .getElementById("logout_btn")
   .addEventListener("click", () => {
     sessionStorage.removeItem("chatSession");
     open("./signIn.html", "_self");
   });
-  const logout2 = document
+const logout2 = document
   .getElementById("logout_btn2")
   .addEventListener("click", () => {
     sessionStorage.removeItem("chatSession");
     open("./signIn.html", "_self");
   });
-
-// eviar sms
-const sms_text = document.getElementById("msg_text");
-const btn_send = document
-  .getElementById("send_btn")
-  .addEventListener("click", () => {
-    const userName = sessionStorage.getItem("chatSession");
-    const user_avatar = sessionStorage.getItem("avatar_n");
-    sessionStorage.setItem("avatar_n", user_avatar);
-    const msg = {
-      numberAvatar: user_avatar,
-      userName: userName,
-      msg: sms_text.value,
-    };
-
-    chatMsgs.push(msg)
-    alert(JSON.stringify(msg));
-
-    sms_text.value = "";
-  });
-
-// mostrar sms
 
 let chatMsgs = [
   {
@@ -64,19 +28,6 @@ let chatMsgs = [
   {
     numberAvatar: 2,
     userName: "Adao Angelo",
-    msg: "Hello Edgar como foi o teu dia meu amigo",
-  },
-
-  {
-    numberAvatar: 1,
-    userName: "Edgar paulo",
-    msg: "Hello Edgar como foi o teu dia meu amigo",
-  },
-
-
-  {
-    numberAvatar: 1,
-    userName: "Sandro Panda",
     msg: "Hello Edgar como foi o teu dia meu amigo",
   },
 ];

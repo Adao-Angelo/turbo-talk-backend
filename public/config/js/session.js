@@ -5,7 +5,6 @@ btn.addEventListener("click", () => {
   const userSession = userName.value;
   //
   sessionStorage.setItem("chatSession", userSession);
-  open("./index.html", "_self");
 });
 
 if (sessionStorage.getItem("chatSession")) {
