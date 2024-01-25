@@ -1,9 +1,5 @@
-import express from "express";
-import http from "http";
-const app = express();
-app.get("/", (req, res) => {
-  res.json({ message: "server is runner " });
-});
-app.listen(5000, () => {
-  console.log("server is runner in: http://localhost:5000/");
+import { serverHttp } from "./http";
+import "./webSocket";
+serverHttp.listen(3000, () => {
+  console.log("server is runner on port 6000");
 });

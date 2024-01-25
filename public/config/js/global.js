@@ -21,6 +21,12 @@ const logout = document
     sessionStorage.removeItem("chatSession");
     open("./signIn.html", "_self");
   });
+  const logout2 = document
+  .getElementById("logout_btn2")
+  .addEventListener("click", () => {
+    sessionStorage.removeItem("chatSession");
+    open("./signIn.html", "_self");
+  });
 
 // eviar sms
 const sms_text = document.getElementById("msg_text");
@@ -36,6 +42,7 @@ const btn_send = document
       msg: sms_text.value,
     };
 
+    chatMsgs.push(msg)
     alert(JSON.stringify(msg));
 
     sms_text.value = "";
@@ -49,20 +56,27 @@ let chatMsgs = [
     userName: "Adao Angelo",
     msg: "Hello Edgar como foi o teu dia meu amigo",
   },
+  {
+    numberAvatar: 2,
+    userName: "Adao Angelo",
+    msg: "Hello Edgar como foi o teu dia meu amigo",
+  },
+  {
+    numberAvatar: 2,
+    userName: "Adao Angelo",
+    msg: "Hello Edgar como foi o teu dia meu amigo",
+  },
 
   {
     numberAvatar: 1,
     userName: "Edgar paulo",
     msg: "Hello Edgar como foi o teu dia meu amigo",
   },
+
+
   {
     numberAvatar: 1,
     userName: "Sandro Panda",
-    msg: "Hello Edgar como foi o teu dia meu amigo",
-  },
-  {
-    numberAvatar: 1,
-    userName: "Adao Angelo",
     msg: "Hello Edgar como foi o teu dia meu amigo",
   },
 ];
