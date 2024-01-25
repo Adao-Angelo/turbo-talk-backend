@@ -26,4 +26,8 @@ io.on("connection", (socket) => {
 
     console.log(users);
   });
+
+  socket.on("send_msg", (msg) => {
+    console.log(msg);
+  });
 });

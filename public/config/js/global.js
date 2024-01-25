@@ -14,23 +14,7 @@ const logout2 = document
     open("./signIn.html", "_self");
   });
 
-let chatMsgs = [
-  {
-    numberAvatar: 2,
-    userName: "Adao Angelo",
-    msg: "Hello Edgar como foi o teu dia meu amigo",
-  },
-  {
-    numberAvatar: 2,
-    userName: "Adao Angelo",
-    msg: "Hello Edgar como foi o teu dia meu amigo",
-  },
-  {
-    numberAvatar: 2,
-    userName: "Adao Angelo",
-    msg: "Hello Edgar como foi o teu dia meu amigo",
-  },
-];
+let chatMsgs = [];
 
 function renderMsg(msgs) {
   const chat = document.getElementById("chatb");
