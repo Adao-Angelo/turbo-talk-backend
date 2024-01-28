@@ -6,3 +6,10 @@
   box-sizing: border-box;
   font-family: "poppins-regular";
 }
+
+:root {
+  --background: #ffffff;
+  --padding: 20.34px;
+  --color2: #00000070;
+  --radius: 7.21px;
+}
