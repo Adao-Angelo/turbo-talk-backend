@@ -7,3 +7,7 @@ It was a challenge that gave me a lot of experience about programming and much m
 ## Startsd The Server 
     npm run dev
 ## Open 
+
+http://localhost:3000/
+
+
