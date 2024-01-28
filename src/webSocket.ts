@@ -1,12 +1,8 @@
 import { io } from "./http";
+import { RoonUser } from "./modules/Users/model/user";
 import { createMessageControler } from "./modules/message/controllers/CreateMessageController";
-import { Message } from "./modules/message/model/message";
+import { getMessagesRoon } from "./modules/message/controllers/getMessageRoon";
 
-interface RoonUser {
-  socket_id: string;
-  username: string;
-  roon: string;
-}
 
 const users: RoonUser[] = [];
 
@@ -25,8 +21,7 @@ io.on("connection", (socket) => {
         roon: data.roon,
       });
     }
-
-    const messagesRoon = getMessagesRoon(data.roon);
+    const messagesRoon = getMessagesRoon.execute(data.roon);
     callback(messagesRoon);
   });
 
@@ -35,5 +30,3 @@ io.on("connection", (socket) => {
     io.to(data.roon).emit("message", message);
   });
 });
-
-
