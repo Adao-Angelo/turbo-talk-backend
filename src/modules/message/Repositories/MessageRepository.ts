@@ -8,4 +8,5 @@ class MessageRepository implements IMessageRepository {
   }
 }
 
-export { MessageRepository };
+const messageRepository = new MessageRepository();
+export { messageRepository };

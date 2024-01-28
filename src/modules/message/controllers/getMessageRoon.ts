@@ -1,5 +1,4 @@
-import { MessageRepository } from "../Repositories/MessageRepository";
-const messageRepository = new MessageRepository();
+import { messageRepository } from "../Repositories/MessageRepository";
 
 class GetMessagesRoon {
   constructor() {}

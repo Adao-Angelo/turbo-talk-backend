@@ -1,8 +1,9 @@
-import { MessageRepository } from "../Repositories/MessageRepository";
+import { IMessageRepository } from "../Repositories/IMessageRepository";
+import { messageRepository } from "../Repositories/MessageRepository";
 import { Message } from "../model/message";
 
 class CreateMessageControler {
-  constructor(private messageR: MessageRepository) {}
+  constructor(private messageR: IMessageRepository) {}
 
   execute(data: any) {
     const message: Message = {
@@ -15,7 +16,5 @@ class CreateMessageControler {
     return message;
   }
 }
-const createMessageControler = new CreateMessageControler(
-  new MessageRepository()
-);
+const createMessageControler = new CreateMessageControler(messageRepository);
 export { createMessageControler };
