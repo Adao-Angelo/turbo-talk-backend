@@ -1,4 +1,6 @@
 import { io } from "./http";
+import { createMessageControler } from "./modules/message/controllers/CreateMessageController";
+import { Message } from "./modules/message/model/message";
 
 interface RoonUser {
   socket_id: string;
@@ -6,15 +8,8 @@ interface RoonUser {
   roon: string;
 }
 
-interface Message {
-  username: string;
-  text: string;
-  roon: string;
-  date: Date;
-}
-
 const users: RoonUser[] = [];
-const messages: Message[] = [];
+
 io.on("connection", (socket) => {
   socket.on("select_roon", (data, callback) => {
     socket.join(data.roon);
@@ -36,14 +31,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("message", (data) => {
-    const message: Message = {
-      roon: data.roon,
-      username: data.username,
-      text: data.msg,
-      date: new Date(),
-    };
-
-    messages.push(message);
+    const message = createMessageControler.execute(data);
     io.to(data.roon).emit("message", message);
   });
 });
