@@ -4,5 +4,4 @@ interface Message {
   roon: string;
   date: Date;
 }
-
 export { Message };

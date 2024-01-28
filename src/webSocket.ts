@@ -36,7 +36,4 @@ io.on("connection", (socket) => {
   });
 });
 
-function getMessagesRoon(roon: string) {
-  const messagesRoon = messages.filter((message) => message.roon === roon);
-  return messagesRoon;
-}
+
