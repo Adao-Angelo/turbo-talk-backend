@@ -1,4 +1,5 @@
-const socket = io();
+export const socket = io();
+
 const msg = document.getElementById("msg_text");
 const send_btn = document.getElementById("send_btn");
 
@@ -6,10 +7,16 @@ const urlSearch = new URLSearchParams(window.location.search);
 const username = urlSearch.get("user-name");
 const roon = urlSearch.get("select_roon");
 
-socket.emit("select_roon", {
-  username,
-  roon,
-});
+socket.emit(
+  "select_roon",
+  {
+    username,
+    roon,
+  },
+  (response) => {
+    console.log(response);
+  }
+);
 
 send_btn.addEventListener("click", () => {
   const message = {
@@ -17,7 +24,7 @@ send_btn.addEventListener("click", () => {
     roon,
     msg: msg.value,
   };
-  socket.emit("send_msg", message);
+  socket.emit("message", message);
 
   msg.value = "";
 });

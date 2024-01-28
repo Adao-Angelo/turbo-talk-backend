@@ -1,3 +1,5 @@
+import { socket } from "./chat.js";
+
 const userSessionName = document.getElementById("user_name");
 const avatar_img = document.getElementById("avatar_img");
 
@@ -15,24 +17,23 @@ const logout2 = document
   });
 
 let chatMsgs = [];
-
-function renderMsg(msgs) {
-  const chat = document.getElementById("chatb");
-  for (let msg of msgs) {
+const chat = document.getElementById("chatb");
+socket.on("message", (message) => {
+    const msg = message
     if (msg.userName == sessionStorage.getItem("chatSession")) {
       chat.innerHTML += `
       <div class="msg my">
       <div class="msg_user_avatar">
         <img
-          src="./assets/util/image/avatar/avata${msg.numberAvatar}.jpg"
+          src="./assets/util/image/avatar/avata${"depis"}.jpg"
           alt=""
           class="avatar_img"
         />
       </div>
       <div class="msg_content">
-        <h3 class="msg_user_name">${msg.userName}</h3>
+        <h3 class="msg_user_name">${msg.username}</h3>
         <p>
-           ${msg.msg}
+           ${msg.text}
         </p>
       </div>
     </div>
@@ -42,21 +43,19 @@ function renderMsg(msgs) {
     <div class="msg">
     <div class="msg_user_avatar">
       <img
-        src="./assets/util/image/avatar/avatar${msg.numberAvatar}.jpg"
+        src="./assets/util/image/avatar/avatar${"depois"}.jpg"
         alt=""
         class="avatar_img"
       />
     </div>
     <div class="msg_content">
-      <h3 class="msg_user_name">${msg.userName}</h3>
+      <h3 class="msg_user_name">${msg.username}</h3>
       <p>
-         ${msg.msg}
+         ${msg.text}
       </p>
     </div>
   </div>
         `;
     }
-  }
-}
-
-renderMsg(chatMsgs);
+});
+console.log(chatMsgs);

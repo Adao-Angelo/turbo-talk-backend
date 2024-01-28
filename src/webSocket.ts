@@ -6,10 +6,17 @@ interface RoonUser {
   roon: string;
 }
 
-const users: RoonUser[] = [];
+interface Message {
+  username: string;
+  text: string;
+  roon: string;
+  date: Date;
+}
 
+const users: RoonUser[] = [];
+const messages: Message[] = [];
 io.on("connection", (socket) => {
-  socket.on("select_roon", (data) => {
+  socket.on("select_roon", (data, callback) => {
     socket.join(data.roon);
     const userRoon = users.find(
       (user) => user.username === data.username && user.roon === data.roon
@@ -24,10 +31,24 @@ io.on("connection", (socket) => {
       });
     }
 
-    console.log(users);
+    const messagesRoon = getMessagesRoon(data.roon);
+    callback(messagesRoon);
   });
 
-  socket.on("send_msg", (msg) => {
-    console.log(msg);
+  socket.on("message", (data) => {
+    const message: Message = {
+      roon: data.roon,
+      username: data.username,
+      text: data.msg,
+      date: new Date(),
+    };
+
+    messages.push(message);
+    io.to(data.roon).emit("message", message);
   });
 });
+
+function getMessagesRoon(roon: string) {
+  const messagesRoon = messages.filter((message) => message.roon === roon);
+  return messagesRoon;
+}
