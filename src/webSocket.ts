@@ -3,7 +3,6 @@ import { RoonUser } from "./modules/Users/model/user";
 import { createMessageControler } from "./modules/message/controllers/CreateMessageController";
 import { getMessagesRoon } from "./modules/message/controllers/getMessageRoon";
 
-
 const users: RoonUser[] = [];
 
 io.on("connection", (socket) => {

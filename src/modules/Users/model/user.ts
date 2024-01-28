@@ -3,5 +3,4 @@ interface RoonUser {
   username: string;
   roon: string;
 }
-
 export { RoonUser };
