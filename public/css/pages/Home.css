@@ -1,1 +1,73 @@
 @import url(../pages/global.css);
+
+.top {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 10px 12px;
+  align-items: center;
+  background-color: var(--background);
+}
+.T {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.roon-img img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+.status {
+  color: var(--green);
+  margin-top: -3px;
+}
+.config {
+  display: flex;
+  gap: 20px;
+}
+.config i img {
+  cursor: pointer;
+}
+.messages {
+  background-color: var(--bg2);
+  padding: 20px;
+}
+.message {
+  padding: 12px;
+  max-width: 60%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  background-color: var(--bgmsg);
+}
+.message.your {
+  margin-left: 40%;
+}
+
+.menu {
+  background-color: var(--background);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  gap: 1rem;
+}
+.menu form input {
+  outline: none;
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #8f8e8e;
+  border-radius: 20px;
+}
+.menu form button {
+  padding: 10px;
+  background: var(--green);
+  color: var(--background);
+  border: none;
+  border-radius: 20px;
+}
