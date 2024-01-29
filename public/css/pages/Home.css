@@ -32,8 +32,10 @@
   cursor: pointer;
 }
 .messages {
+  margin-top: 4rem;
   background-color: var(--bg2);
   padding: 20px;
+  margin-bottom: 4rem;
 }
 .message {
   padding: 12px;
