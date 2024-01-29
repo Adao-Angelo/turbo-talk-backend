@@ -10,6 +10,5 @@ It was a challenge that gave me a lot of experience about programming and much m
 
 http://localhost:3000/
 
-
 <img src="https://static.cegoc.pt/wp-content/uploads/2023/06/30113045/10-passos-para-utilizar-o-sistema-de-chat-de-forma-consciente-conteudo.jpg">
 
