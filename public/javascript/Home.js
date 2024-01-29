@@ -1,10 +1,10 @@
 export const socket = io();
 
-const msg = document.getElementById("text");
-const send_btn = document.getElementById("send-message");
+const msg = document.getElementById("message");
+const send_btn = document.querySelector(".send-message");
 
 const urlSearch = new URLSearchParams(window.location.search);
-const username = urlSearch.get("user-name");
+const username = urlSearch.get("user");
 const roon = urlSearch.get("select_roon");
 
 socket.emit(
