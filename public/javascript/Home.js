@@ -15,7 +15,7 @@ socket.emit(
     roon,
   },
   (messages) => {
-    text_roon.innerHTML = messages[0].roon
+    text_roon.innerHTML = messages[0].roon;
     for (let message of messages) {
       rederMessage(message);
     }
