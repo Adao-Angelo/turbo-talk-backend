@@ -1,7 +1,7 @@
 export const socket = io();
 
-const msg = document.getElementById("msg_text");
-const send_btn = document.getElementById("send_btn");
+const msg = document.getElementById("text");
+const send_btn = document.getElementById("send-message");
 
 const urlSearch = new URLSearchParams(window.location.search);
 const username = urlSearch.get("user-name");
