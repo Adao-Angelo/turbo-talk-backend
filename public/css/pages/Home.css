@@ -59,14 +59,14 @@
   padding: 20px;
   gap: 1rem;
 }
-.menu form input {
+.menu .form input {
   outline: none;
   width: 70%;
   padding: 10px;
   border: 1px solid #8f8e8e;
   border-radius: 20px;
 }
-.menu form button {
+.menu .form button {
   padding: 10px;
   background: var(--green);
   color: var(--background);

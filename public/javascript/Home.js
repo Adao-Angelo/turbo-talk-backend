@@ -15,19 +15,24 @@ socket.emit(
   },
   (messages) => {
     for (let message of messages) {
+      console.log(message);
       rederMessage(message);
     }
   }
 );
 
 send_btn.addEventListener("click", () => {
-  const message = {
-    username,
-    roon,
-    msg: msg.value,
-  };
-  socket.emit("message", message);
-  msg.value = "";
+  if (msg.value == "") {
+    alert("write a message");
+  } else {
+    const message = {
+      username,
+      roon,
+      msg: msg.value,
+    };
+    socket.emit("message", message);
+    msg.value = "";
+  }
 });
 
 socket.on("message", (message) => {
@@ -35,10 +40,19 @@ socket.on("message", (message) => {
 });
 
 function rederMessage(message) {
-  containerMessage.innerHTML += `
+  if (message.user == username) {
+    containerMessage.innerHTML += `
+    <div class="message your">
+      <h3>${message.user}</h3>
+      <p>${message.text}</p>
+      <span>${message.date}</span>
+    </div>`;
+  } else {
+    containerMessage.innerHTML += `
   <div class="message">
     <h3>${message.user}</h3>
     <p>${message.text}</p>
     <span>${message.date}</span>
   </div>`;
+  }
 }
