@@ -3,7 +3,6 @@ interface ICreateUserSessionDTO {
   username: string;
   roon: string;
 }
-
 interface IUserRepository {
   CreteSession(userRoon: ICreateUserSessionDTO): void;
 }
