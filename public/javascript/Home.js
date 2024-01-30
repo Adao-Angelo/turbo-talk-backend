@@ -41,6 +41,7 @@ socket.on("message", (message) => {
 });
 
 function rederMessage(message) {
+  window.scrollTo(0, 1000000);
   if (message.user == username) {
     containerMessage.innerHTML += `
     <div class="message your">

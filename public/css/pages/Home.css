@@ -36,6 +36,7 @@
   background-color: var(--bg2);
   padding: 20px;
   margin-bottom: 4rem;
+  padding-bottom: 8rem;
 }
 .message {
   padding: 12px;
