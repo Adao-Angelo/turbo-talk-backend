@@ -1,6 +1,7 @@
 export const socket = io();
 
 const msg = document.getElementById("message");
+const logout = document.querySelector(".logout");
 const send_btn = document.querySelector(".send-message");
 const containerMessage = document.querySelector(".messages");
 const urlSearch = new URLSearchParams(window.location.search);
@@ -58,3 +59,7 @@ function rederMessage(message) {
   </div>`;
   }
 }
+
+logout.addEventListener("click", () => {
+  open("Sign-In.html", "_self");
+});
