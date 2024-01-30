@@ -14,10 +14,15 @@
     "express": "^4.18.2",
     "get-tsconfig": "^4.7.2",
     "resolve-pkg-maps": "^1.0.0",
-    "socket.io": "^4.7.4"
+    "socket.io": "^4.7.4",
+    "tsup": "^8.0.1"
   },
   "scripts": {
+    "biuld": "tsup ./src",
     "dev": "tsx watch src/server.ts"
+  },
+  "engines": {
+    "node": "20.11.0"
   },
   "keywords": [],
   "author": "",
