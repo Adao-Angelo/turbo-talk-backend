@@ -37,6 +37,22 @@ send_btn.addEventListener("click", () => {
   }
 });
 
+msg.addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    if (msg.value == "") {
+      alert("write a message");
+    } else {
+      const message = {
+        username,
+        roon,
+        msg: msg.value,
+      };
+      socket.emit("message", message);
+      msg.value = "";
+    }
+  }
+});
+
 socket.on("message", (message) => {
   rederMessage(message);
 });

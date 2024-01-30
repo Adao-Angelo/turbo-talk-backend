@@ -47,6 +47,7 @@
 }
 .message.your {
   margin-left: 40%;
+  background-color: var(--green);
 }
 
 .menu {
