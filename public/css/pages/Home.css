@@ -75,3 +75,32 @@
   border: none;
   border-radius: 20px;
 }
+
+.chat {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0a0a6b;
+}
+.chat ul {
+  color: green;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: aliceblue;
+  position: absolute;
+  width: 30rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.chat li {
+  list-style: none;
+  padding: 1rem;
+  background-color: rgb(26, 113, 26);
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  color: aliceblue;
+}
