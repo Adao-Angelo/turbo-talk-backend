@@ -14,3 +14,4 @@ this repository is constantly changing, it is open source so it is free to make 
 
 <img src="https://static.cegoc.pt/wp-content/uploads/2023/06/30113045/10-passos-para-utilizar-o-sistema-de-chat-de-forma-consciente-conteudo.jpg">
 
+
