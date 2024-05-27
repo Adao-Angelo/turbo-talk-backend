@@ -1,18 +1,18 @@
 import { io } from "./http";
 import { createUserSessionController } from "./modules/Users/controllers/CreateSessionUserRoon";
-import { createMessageControler } from "./modules/message/controllers/CreateMessageController";
-import { getMessagesRoon } from "./modules/message/controllers/getMessageRoon";
+import { createMessageController } from "./modules/message/controllers/CreateMessageController";
+import { getMessagesRoom } from "./modules/message/controllers/getMessageRoom";
 
 io.on("connection", (socket) => {
-  socket.on("select_roon", (data, callback) => {
-    socket.join(data.roon);
+  socket.on("select_room", (data, callback) => {
+    socket.join(data.room);
     createUserSessionController.execute(socket, data);
-    const messagesRoon = getMessagesRoon.execute(data.roon);
-    callback(messagesRoon);
+    const messagesRoom = getMessagesRoom.execute(data.room);
+    callback(messagesRoom);
   });
 
   socket.on("message", (data) => {
-    const message = createMessageControler.execute(data);
-    io.to(data.roon).emit("message", message);
+    const message = createMessageController.execute(data);
+    io.to(data.room).emit("message", message);
   });
 });

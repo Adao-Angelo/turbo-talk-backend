@@ -1,13 +1,12 @@
-
-interface ICreatMessageDTO {
+interface ICreateMessageDTO {
   user: string;
   text: string;
-  roon: string;
+  room: string;
   date: Date;
 }
 
 interface IMessageRepository {
-  create(message: ICreatMessageDTO): void;
+  create(message: ICreateMessageDTO): void;
 }
 
-export { ICreatMessageDTO, IMessageRepository };
+export { ICreateMessageDTO, IMessageRepository };

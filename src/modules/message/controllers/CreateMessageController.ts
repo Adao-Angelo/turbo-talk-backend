@@ -2,12 +2,12 @@ import { IMessageRepository } from "../Repositories/IMessageRepository";
 import { messageRepository } from "../Repositories/MessageRepository";
 import { Message } from "../model/message";
 
-class CreateMessageControler {
+class CreateMessageController {
   constructor(private messageR: IMessageRepository) {}
 
   execute(data: any) {
     const message: Message = {
-      roon: data.roon,
+      room: data.room,
       user: data.username,
       text: data.msg,
       date: new Date(),
@@ -16,5 +16,5 @@ class CreateMessageControler {
     return message;
   }
 }
-const createMessageControler = new CreateMessageControler(messageRepository);
-export { createMessageControler };
+const createMessageController = new CreateMessageController(messageRepository);
+export { createMessageController };

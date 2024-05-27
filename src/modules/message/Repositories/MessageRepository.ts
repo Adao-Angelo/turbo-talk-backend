@@ -1,9 +1,9 @@
 import { Message } from "../model/message";
-import { ICreatMessageDTO, IMessageRepository } from "./IMessageRepository";
+import { ICreateMessageDTO, IMessageRepository } from "./IMessageRepository";
 
 class MessageRepository implements IMessageRepository {
   messages: Message[] = [];
-  create(message: ICreatMessageDTO): void {
+  create(message: ICreateMessageDTO): void {
     this.messages.push(message);
   }
 }
