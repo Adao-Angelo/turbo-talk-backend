@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/socket.io": "^3.0.2",
     "tsx": "^4.7.0",
@@ -11,6 +12,7 @@
   "main": "index.js",
   "dependencies": {
     "@prisma/client": "^5.11.0",
+    "dotenv": "^16.4.5",
     "esbuild": "^0.19.11",
     "express": "^4.18.2",
     "get-tsconfig": "^4.7.2",
@@ -21,7 +23,7 @@
   },
   "scripts": {
     "biuld": "tsup ./src",
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/app.ts"
   },
   "engines": {},
   "keywords": [],
