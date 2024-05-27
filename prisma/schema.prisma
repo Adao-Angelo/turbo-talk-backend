@@ -6,3 +6,64 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model user {
+  id              String   @id @default(cuid())
+  name            String
+  phone           Int      @unique
+  email           String   @unique
+  password        String
+  avatar          String
+  created_at      DateTime
+  last_activities String
+}
+
+model contact {
+  id            String   @id @default(cuid())
+  user_id       String
+  contact_name  String
+  contact_phone Int
+  created_at    DateTime
+}
+
+model message {
+  id              String   @id @default(cuid())
+  conversation_id String
+  sender_id       String
+  text            String
+  media_id        String?
+  send_date       DateTime
+  status          String
+  message_type    String
+}
+
+model conversation {
+  id                String   @id @default(cuid())
+  conversation_name String?
+  type              String
+  created_at        DateTime
+}
+
+model group {
+  id               String   @id @default(cuid())
+  group_name       String
+  administrator_id String
+  photo_url        String
+  created_at       DateTime
+}
+
+model media_file {
+  id          String   @id @default(cuid())
+  file_url    String
+  file_type   String
+  file_size   Float
+  upload_date DateTime
+}
+
+model message_status {
+  id             String   @id @default(cuid())
+  message_id     String
+  destination_id String
+  status         String
+  update_date    DateTime
+}
