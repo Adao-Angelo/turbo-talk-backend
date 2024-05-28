@@ -1,6 +1,6 @@
-import { serverHttp } from "./http";
+import { serverHttp } from "./httpServer";
 import { config } from "dotenv";
-import "./webSocket";
+import "./socket.io";
 
 config();
 const port = process.env.SOCKET_PORT || 4000;

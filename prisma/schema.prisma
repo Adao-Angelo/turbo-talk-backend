@@ -16,6 +16,8 @@ model user {
   avatar          String
   created_at      DateTime
   last_activities String
+
+  @@map("users")
 }
 
 model contact {
@@ -24,6 +26,8 @@ model contact {
   contact_name  String
   contact_phone Int
   created_at    DateTime
+
+  @@map("contacts")
 }
 
 model message {
@@ -35,6 +39,8 @@ model message {
   send_date       DateTime
   status          String
   message_type    String
+
+  @@map("messages")
 }
 
 model conversation {
@@ -42,6 +48,8 @@ model conversation {
   conversation_name String?
   type              String
   created_at        DateTime
+
+  @@map("conversation")
 }
 
 model group {
@@ -50,6 +58,8 @@ model group {
   administrator_id String
   photo_url        String
   created_at       DateTime
+
+  @@map("groups")
 }
 
 model media_file {
@@ -58,6 +68,8 @@ model media_file {
   file_type   String
   file_size   Float
   upload_date DateTime
+
+  @@map("media_files")
 }
 
 model message_status {
@@ -66,4 +78,6 @@ model message_status {
   destination_id String
   status         String
   update_date    DateTime
+
+  @@map("messages_status")
 }
